@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ميزانيتي - المعاملات</title>
+    <title>ميزانيتي - المعاملات والميزانية</title>
 </head>
 
 <body>
@@ -13,20 +14,18 @@
         <h1>ميزانيتي</h1>
 
         <nav>
-            <a href="index.html">الرئيسية</a> |
-            <a href="transactions.html">المعاملات</a> |
-            <a href="budgets.html">الميزانيات</a> |
-            <a href="goals.html">الأهداف المالية</a> |
-            <a href="reports.html">التقارير</a> |
-            <a href="about.html">من نحن</a> |
-            <a href="contact.html">تواصل معنا</a>
+            <a href="home.html">الرئيسية</a> |
+            <a href="transactions.html">المعاملات والميزانية</a> |
+            <a href="goals.html">الأهداف والتقارير</a> |
+            <a href="contact.html">تواصل معنا</a> |
+            <a href="index.html">تسجيل الخروج</a>
         </nav>
 
     </header>
 
     <main>
 
-        <h2>المعاملات المالية</h2>
+        <h2>المعاملات والميزانية</h2>
 
         <section>
 
@@ -34,49 +33,68 @@
 
             <form>
 
-                <label>نوع العملية:</label>
+                <label for="type">نوع العملية:</label>
                 <br>
 
-                <select name="type">
+                <select id="type" name="type">
                     <option value="income">دخل</option>
                     <option value="expense">مصروف</option>
                 </select>
 
                 <br><br>
 
-                <label>المبلغ:</label>
+                <label for="amount">المبلغ:</label>
                 <br>
 
-                <input type="number" name="amount">
+                <input
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    placeholder="أدخل المبلغ"
+                    required
+                >
 
                 <br><br>
 
-                <label>التصنيف:</label>
+                <label for="category">التصنيف:</label>
                 <br>
 
-                <select name="category">
+                <select id="category" name="category">
+                    <option>راتب</option>
                     <option>طعام</option>
                     <option>مواصلات</option>
                     <option>تعليم</option>
                     <option>تسوق</option>
                     <option>فواتير</option>
                     <option>ترفيه</option>
+                    <option>صحة</option>
                     <option>أخرى</option>
                 </select>
 
                 <br><br>
 
-                <label>الملاحظة:</label>
+                <label for="note">الملاحظة:</label>
                 <br>
 
-                <textarea name="note"></textarea>
+                <textarea
+                    id="note"
+                    name="note"
+                    rows="4"
+                    cols="30"
+                    placeholder="اكتب ملاحظة"
+                ></textarea>
 
                 <br><br>
 
-                <label>التاريخ:</label>
+                <label for="date">التاريخ:</label>
                 <br>
 
-                <input type="date" name="date">
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    required
+                >
 
                 <br><br>
 
@@ -86,9 +104,34 @@
 
         </section>
 
+        <hr>
+
         <section>
 
-            <h3>آخر المعاملات</h3>
+            <h3>البحث عن معاملة</h3>
+
+            <form>
+
+                <label for="search">بحث:</label>
+
+                <input
+                    type="search"
+                    id="search"
+                    name="search"
+                    placeholder="ابحث عن معاملة"
+                >
+
+                <button type="submit">بحث</button>
+
+            </form>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>المعاملات</h3>
 
             <table border="1">
 
@@ -98,6 +141,7 @@
                     <th>التصنيف</th>
                     <th>الملاحظة</th>
                     <th>التاريخ</th>
+                    <th>الإجراءات</th>
                 </tr>
 
                 <tr>
@@ -105,7 +149,102 @@
                     <td>50</td>
                     <td>تعليم</td>
                     <td>شراء كتاب</td>
-                    <td>2026-10-08</td>
+                    <td>2026-10-11</td>
+
+                    <td>
+                        <button type="button">تعديل</button>
+                        <button type="button">حذف</button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h2>إدارة الميزانية</h2>
+
+            <form>
+
+                <label for="month">الشهر:</label>
+                <br>
+
+                <input
+                    type="month"
+                    id="month"
+                    name="month"
+                >
+
+                <br><br>
+
+                <label for="budgetCategory">تصنيف الميزانية:</label>
+                <br>
+
+                <select id="budgetCategory" name="budgetCategory">
+                    <option>طعام</option>
+                    <option>مواصلات</option>
+                    <option>تعليم</option>
+                    <option>تسوق</option>
+                    <option>فواتير</option>
+                    <option>ترفيه</option>
+                    <option>صحة</option>
+                    <option>أخرى</option>
+                </select>
+
+                <br><br>
+
+                <label for="budgetAmount">قيمة الميزانية:</label>
+                <br>
+
+                <input
+                    type="number"
+                    id="budgetAmount"
+                    name="budgetAmount"
+                    placeholder="أدخل قيمة الميزانية"
+                    required
+                >
+
+                <br><br>
+
+                <button type="submit">إضافة الميزانية</button>
+
+            </form>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>ملخص الميزانية</h3>
+
+            <table border="1">
+
+                <tr>
+                    <th>التصنيف</th>
+                    <th>الميزانية</th>
+                    <th>المصروف</th>
+                    <th>المتبقي</th>
+                    <th>نسبة الاستخدام</th>
+                </tr>
+
+                <tr>
+                    <td>طعام</td>
+                    <td>1000</td>
+                    <td>700</td>
+                    <td>300</td>
+                    <td>70%</td>
+                </tr>
+
+                <tr>
+                    <td>تعليم</td>
+                    <td>500</td>
+                    <td>200</td>
+                    <td>300</td>
+                    <td>40%</td>
                 </tr>
 
             </table>
@@ -113,6 +252,10 @@
         </section>
 
     </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 ميزانيتي</p>
+    </footer>
 
 </body>
 </html>

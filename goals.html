@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ميزانيتي - الأهداف المالية</title>
+    <title>ميزانيتي - الأهداف والتقارير</title>
 </head>
 
 <body>
@@ -13,13 +14,11 @@
         <h1>ميزانيتي</h1>
 
         <nav>
-            <a href="index.html">الرئيسية</a> |
-            <a href="transactions.html">المعاملات</a> |
-            <a href="budgets.html">الميزانيات</a> |
-            <a href="goals.html">الأهداف المالية</a> |
-            <a href="reports.html">التقارير</a> |
-            <a href="about.html">من نحن</a> |
-            <a href="contact.html">تواصل معنا</a>
+            <a href="home.html">الرئيسية</a> |
+            <a href="transactions.html">المعاملات والميزانية</a> |
+            <a href="goals.html">الأهداف والتقارير</a> |
+            <a href="contact.html">تواصل معنا</a> |
+            <a href="index.html">تسجيل الخروج</a>
         </nav>
 
     </header>
@@ -28,61 +27,190 @@
 
         <h2>الأهداف المالية</h2>
 
-        <form>
+        <section>
 
-            <label>اسم الهدف:</label>
-            <br>
+            <h3>إضافة هدف مالي جديد</h3>
 
-            <input type="text" placeholder="مثال: شراء لابتوب">
+            <form>
 
-            <br><br>
+                <label for="goalName">اسم الهدف:</label>
+                <br>
 
-            <label>المبلغ المطلوب:</label>
-            <br>
+                <input
+                    type="text"
+                    id="goalName"
+                    name="goalName"
+                    placeholder="مثال: شراء لابتوب"
+                    required
+                >
 
-            <input type="number">
+                <br><br>
 
-            <br><br>
+                <label for="targetAmount">المبلغ المطلوب:</label>
+                <br>
 
-            <label>المبلغ المدخر:</label>
-            <br>
+                <input
+                    type="number"
+                    id="targetAmount"
+                    name="targetAmount"
+                    placeholder="أدخل المبلغ المطلوب"
+                    required
+                >
 
-            <input type="number">
+                <br><br>
 
-            <br><br>
+                <label for="savedAmount">المبلغ المدخر:</label>
+                <br>
 
-            <label>تاريخ الهدف:</label>
-            <br>
+                <input
+                    type="number"
+                    id="savedAmount"
+                    name="savedAmount"
+                    placeholder="أدخل المبلغ المدخر"
+                >
 
-            <input type="date">
+                <br><br>
 
-            <br><br>
+                <label for="goalDate">تاريخ تحقيق الهدف:</label>
+                <br>
 
-            <button type="submit">إضافة الهدف</button>
+                <input
+                    type="date"
+                    id="goalDate"
+                    name="goalDate"
+                >
 
-        </form>
+                <br><br>
 
-        <h3>أهدافي الحالية</h3>
+                <button type="submit">إضافة الهدف</button>
 
-        <table border="1">
+            </form>
 
-            <tr>
-                <th>الهدف</th>
-                <th>المبلغ المطلوب</th>
-                <th>المبلغ المدخر</th>
-                <th>نسبة الإنجاز</th>
-            </tr>
+        </section>
 
-            <tr>
-                <td>شراء لابتوب</td>
-                <td>5000</td>
-                <td>2500</td>
-                <td>50%</td>
-            </tr>
+        <hr>
 
-        </table>
+        <section>
+
+            <h3>أهدافي الحالية</h3>
+
+            <table border="1">
+
+                <tr>
+                    <th>الهدف</th>
+                    <th>المبلغ المطلوب</th>
+                    <th>المبلغ المدخر</th>
+                    <th>المتبقي</th>
+                    <th>نسبة الإنجاز</th>
+                </tr>
+
+                <tr>
+                    <td>شراء لابتوب</td>
+                    <td>5000</td>
+                    <td>2500</td>
+                    <td>2500</td>
+                    <td>50%</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h2>التقارير المالية</h2>
+
+            <h3>اختيار فترة التقرير</h3>
+
+            <form>
+
+                <label for="fromDate">من:</label>
+                <br>
+
+                <input
+                    type="date"
+                    id="fromDate"
+                    name="fromDate"
+                >
+
+                <br><br>
+
+                <label for="toDate">إلى:</label>
+                <br>
+
+                <input
+                    type="date"
+                    id="toDate"
+                    name="toDate"
+                >
+
+                <br><br>
+
+                <button type="submit">عرض التقرير</button>
+
+            </form>
+
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h3>الملخص المالي</h3>
+
+            <p>إجمالي الدخل: 6000</p>
+            <p>إجمالي المصروفات: 2000</p>
+            <p>الرصيد المتبقي: 4000</p>
+
+        </section>
+
+        <section>
+
+            <h3>المصروفات حسب التصنيف</h3>
+
+            <table border="1">
+
+                <tr>
+                    <th>التصنيف</th>
+                    <th>المبلغ</th>
+                </tr>
+
+                <tr>
+                    <td>طعام</td>
+                    <td>800</td>
+                </tr>
+
+                <tr>
+                    <td>مواصلات</td>
+                    <td>300</td>
+                </tr>
+
+                <tr>
+                    <td>تعليم</td>
+                    <td>200</td>
+                </tr>
+
+                <tr>
+                    <td>تسوق</td>
+                    <td>700</td>
+                </tr>
+
+            </table>
+
+            <p>
+                أكثر التصنيفات استهلاكاً للمال:
+                طعام
+            </p>
+
+        </section>
 
     </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 ميزانيتي</p>
+    </footer>
 
 </body>
 </html>
